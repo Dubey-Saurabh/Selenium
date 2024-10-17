@@ -1,0 +1,22 @@
+If not defined priority annotation in testng, in what order our test will run:
+-If test priority is not defined explicitly while running multiple cases, TestNG assigns all cases with a Default test priority, i.e., zero (0)
+
+How do you handle synchronization issues in selenium:
+-In Selenium test automation, synchronization issues arise due to timing mismatches between test script execution and webpage loading.
+  To handle this, use implicit and explicit waits to ensure elements are ready before interacting with them.
+
+How to launch Safari browser via Selenium:
+-No need to set property for Safari browser
+  Add a WebDriver extension in safari browser first
+  Need to Allow Remote Automation on iOS
+
+How to handle frame is Selenium:
+ -Frame consist of two important properties which is index and Name
+
+ Absolute xpath:
+ -Complete address of a locator from parent to child node.
+
+ Difference between driver.get(url) and driver.navigate().to(url)
+ -driver.navigate().to(url) is used when we want to redirect to some other external url from driver.get(url).
+
+ NOTE: type='file' attribute should present for Attach/Upload/Browse file button only then .send method will work for upload this file.
