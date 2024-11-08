@@ -19,7 +19,8 @@ public class ActionsExample {
 //        WebDriver driver = new ChromeDriver();
         WebDriver driver = new HtmlUnitDriver();
         driver.get("https://www.instagram.com");
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
+        driver.manage().window().fullscreen();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 

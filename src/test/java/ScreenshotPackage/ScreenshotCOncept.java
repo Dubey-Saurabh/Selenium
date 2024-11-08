@@ -3,6 +3,8 @@ package ScreenshotPackage;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import TakingScreenshotForFailedTests.BaseClass;
 import org.apache.commons.io.FileUtils;
 
 

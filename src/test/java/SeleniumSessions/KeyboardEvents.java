@@ -31,7 +31,6 @@ public class KeyboardEvents {
 		
 		action.sendKeys(Keys.TAB).sendKeys("password").sendKeys(Keys.ENTER).build().perform();
 
-
 		
 	}
 
