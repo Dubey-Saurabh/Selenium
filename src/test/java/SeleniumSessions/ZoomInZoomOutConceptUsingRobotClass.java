@@ -13,6 +13,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ZoomInZoomOutConceptUsingRobotClass {
 
+	//By using JS
+
 	public static void main(String[] args) throws AWTException, InterruptedException {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
