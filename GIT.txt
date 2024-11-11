@@ -4,9 +4,13 @@ To get the updated file from your last commit : git checkout file_name
 To get all the updated files from your last commit : git checkout -f
 To see the logs of your commits: git log
 To see your last few commit logs not all : git log -p -2(give number till which you want to see your commit logs)
+To see logs of your commits in one line only: git log --oneline
 To see the difference between your staged changes and your last commit : git diff --staged
 To see the difference between your current local changes and your last commit : git diff
 To commit your changes without adding them into Staged area : git commit -a -m 'comment'
 To see the list of your local files: ls
 To remove the file from staged area to untracked file: git rm --cached file_name.html
 To remove the file completely: git rm file_name.html
+Make a new branch: git branch branch_name
+To merge your branch changes into other branch: check in into target branch and run git merge yourbranch_name
+
