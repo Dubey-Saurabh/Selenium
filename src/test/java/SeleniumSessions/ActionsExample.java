@@ -16,16 +16,19 @@ public class ActionsExample {
 
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 
-        WebDriver driver = new HtmlUnitDriver();
+        WebDriver driver = new ChromeDriver();
         driver.get("https://www.instagram.com");
-        driver.manage().window().fullscreen();
+        driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-//        WebElement username = driver.findElement(By.cssSelector("input[name=username]"));
+        WebElement username = driver.findElement(By.cssSelector("input[name=username]"));
+        WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
 
-//        Actions action = new Actions(driver);
-//        action.keyDown(username, Keys.SHIFT).keyUp(username, Keys.SHIFT).sendKeys(username, "saurabhdubey").build().perform();
+        Actions action = new Actions(driver);
+        action.keyDown(username, Keys.SHIFT).sendKeys(username, "saurabhdubey").build().perform(); //Sent text in Upper case
+        action.moveToElement(password).sendKeys("saurabhdubey").keyDown(password,Keys.SHIFT).sendKeys("3").build().perform();
+
 
 
     }

@@ -1,0 +1,5 @@
+Selenium Grid: we can run multiple tests parallely on different browsers
+https://www.youtube.com/watch?v=U1jJsV_YKC8
+
+Hub: on which we will run our test
+Nodes: on which execution will happen

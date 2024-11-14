@@ -23,7 +23,7 @@ public class CalanderHandlingViaJS {
         String dateValue = "Thu, 12 Dec 2024";
         selectDate(driver, date, dateValue);
 
-//        driver.quit();
+        driver.quit();
 
 
     }

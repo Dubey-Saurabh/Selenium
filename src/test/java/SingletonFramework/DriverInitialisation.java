@@ -13,8 +13,6 @@ public class DriverInitialisation {
     private DriverInitialisation() {
     }
 
-    ;
-
     public static DriverInitialisation getObject() {
         if (driverInitialisation == null)
             driverInitialisation = new DriverInitialisation();

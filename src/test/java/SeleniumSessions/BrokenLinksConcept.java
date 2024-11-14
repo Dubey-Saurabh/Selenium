@@ -16,39 +16,41 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrokenLinksConcept {
 
-	public static void main(String[] args) throws IOException, InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+    public static void main(String[] args) throws IOException, InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
 
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));;
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-		driver.get("https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium");
-		List<WebElement> list = driver.findElements(By.tagName("a"));
-		System.out.println("Total links :" + list.size());
+        driver.get("https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium");
+        List<WebElement> list = driver.findElements(By.tagName("a"));
+        System.out.println("Total links :" + list.size());
 
-		for (int i = 0; i <= list.size(); i++) {
-			WebElement element = list.get(i);
-			
-			String url = element.getAttribute("href"); // Will give url
+        for (int i = 0; i <= list.size(); i++) {
+            WebElement element = list.get(i);
 
-			URL link = new URL(url); // Create an object of URL class object and pass above url value
+            String url = element.getAttribute("href"); // Will give url
 
-			HttpURLConnection httpConn = (HttpURLConnection) link.openConnection();  // Create HttpURLConnection class object and apply open connection method.
+            URL link = new URL(url); // Create an object of URL class object and pass above url value
 
-			Thread.sleep(3000);
+            HttpURLConnection httpConn = (HttpURLConnection) link.openConnection();  // Create HttpURLConnection class object and apply open connection method.
 
-			httpConn.connect();  // Connect the connection
-                                        
-			int resCode = httpConn.getResponseCode(); // get response code
+            Thread.sleep(3000);
 
-			if (resCode >= 400) {
-				System.out.println(url + " -" + " is broken link");
-			}
-		}
+            httpConn.connect();  // Connect the connection
 
-	}
+            int resCode = httpConn.getResponseCode(); // get response code
+
+            if (resCode >= 400) {
+                System.out.println(url + " -" + " is broken link");
+            }
+        }
+
+        driver.quit();
+
+    }
 
 }
