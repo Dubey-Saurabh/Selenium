@@ -29,8 +29,3 @@ To see particular user commit: git log --author="Saurabh" or git log --author="S
 To search commits on the basis of some values: git log --grep="value" or git log --grep="value"--oneline
 To see all the merge commits : git log --merges --oneline
 To see all the without merge commits : git log --no-merges --oneline
-To revert your changes to previous commit or any commits: git reset commit_number (Changes will be present in working directory/Untracked files)
-To revert your changes to previous commit or any commits: git reset --soft commit_number (Changes will be present in staging area)
-To revert your changes to previous commit or any commits: git reset --hard commit_number (All Changes will be removed)
-To revert your changes to last 5 commit : git reset HEAD~5 (All Changes will be in working directory)
-
