@@ -11,6 +11,7 @@ Commands:
 To delete a branch: git checkout -d branch_name
 To make a branch and checkout in it: git checkout -b branch_name
 To make a branch: git checkout branch branch_name
+To check history of branch: git lg
 To clear terminal: clear
 To get the updated file from your last commit : git checkout file_name
 To get all the updated files from your last commit : git checkout -f
@@ -46,4 +47,5 @@ To bring all changes back from stash and remove from there: git shash pop
 To bring all changes back from stash and leave as it is there also : git stash apply
 To remove stash: git stash drop
 To merge all commits of the feature branch into single commit : we use squashing and merging git merge--squash
+
 
