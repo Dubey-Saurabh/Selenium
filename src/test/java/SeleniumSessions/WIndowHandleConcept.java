@@ -27,11 +27,11 @@ public class WIndowHandleConcept {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-		driver.get("https://demoqa.com/browser-windows");
+		driver.get("https://the-internet.herokuapp.com/windows");
 
 		String parentWIndow = driver.getWindowHandle();
 
-		driver.findElement(By.xpath("//button[text()='New Window']")).click();
+		driver.findElement(By.linkText("Click Here")).click();
 
 		Set<String> allWindows = driver.getWindowHandles();
 
