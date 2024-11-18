@@ -5,32 +5,30 @@ How to set up:
 
 https://www.youtube.com/watch?v=OjIKxUMSMqs&list=PLWkguCWKqN9N9mvHWFAXqSMStslkILiP0&index=17
 
-
-Git fetch: The git fetch command downloads remote branch commits and file objects from a remote repository to a local repository
-Git Pull: used to fetch and download content from a remote repository and immediately update the local repository to match that content.To create/add a blank file in your project : touch file_name.html
+Git fetch: downloads remote branch commits and file objects from remote to local repo.
+Git pull: download contents from remote repo and immediately update local repo content.
 
 Commands:
 To delete a branch: git checkout -d branch_name
 To make a branch and checkout in it: git checkout -b branch_name
 To make a branch: git checkout branch branch_name
-To check history of branch: git lg
 To clear terminal: clear
 To get the updated file from your last commit : git checkout file_name
 To get all the updated files from your last commit : git checkout -f
 To see the logs of your commits: git log
+To create/add a blank file in your project : touch file_name.html
 To see your last few commit logs not all : git log -p -2(give number till which you want to see your commit logs)
 To see logs of your commits in one line only: git log --oneline
 To see logs of how many lines of code you have added in which files: git log --stat
 To see all your commit messages: git shortlog
+To see how many commits as per user: git shortlog -n -s -e
 To see the difference between your staged changes and your last commit : git diff --staged
 To see the difference between your current local changes and your last commit : git diff
 To commit your changes without adding them into Staged area : git commit -a -m 'comment'
 To see the list of your local files: ls
-To remove the file from staged area to untracked file: git rm --cached file_name.html
-To remove the file completely: git rm file_name.html
-Make a new branch: git branch branch_name
-To merge your branch changes into other branch: check in into target branch and run git merge yourbranch_name
-To see how many commits as per user: git shortlog -n -s -e
+To remove the file from staged area to untracked file: git rm --cached file_name
+To remove the file completely: git rm file_name
+To merge your branch changes into other branch: check in into target branch and run: git merge yourbranch_name
 To see particular user commit: git log --author="Saurabh" or git log --author="Saurabh" --oneline
 To search commits on the basis of some values: git log --grep="value" or git log --grep="value"--oneline
 To see all the merge commits : git log --merges --oneline
@@ -41,14 +39,14 @@ To revert your changes to previous commit or any commits: git reset --hard commi
 To revert your changes to last 5 commit : git reset HEAD~5 (All Changes will be in working directory)
 To edit last commit information: git commit --amend -m 'New message'
 To cherry-pick changes: git cherry-pick commit_number
-To see changes foa a specific commit: git show commit_number
+To see changes for a specific commit: git show commit_number
 To see all commit info of same and different branch: git reflog and git reflog show branch_name
 To save your uncommited changes: git stash save "description"
 To see all stashes list: git stash list
 To bring all changes back from stash and remove from there: git stash pop
 To bring all changes back from stash and leave as it is there also : git stash apply
 To remove stash: git stash drop
-To merge all commits of the feature branch into single commit : we use squashing and merging git merge --squash
+To merge all commits of the feature branch into single commit : we use squashing and merging: git merge --squash
 To merge all commits of the feature branch into single commit in local : we use rebasing, git rebase -i(interactive) lastcommit_number(after which all your targets commits are there)
 Step1: run rebase command
 Step 2: add 's' for all other commits you are merging except the top one
