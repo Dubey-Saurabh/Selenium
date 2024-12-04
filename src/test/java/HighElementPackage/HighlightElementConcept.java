@@ -1,5 +1,6 @@
 package HighElementPackage;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,8 +17,8 @@ public class HighlightElementConcept {
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 
 		driver.get("https://en-gb.facebook.com/");
 

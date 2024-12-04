@@ -18,14 +18,15 @@ public class RightClickConcept {
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		driver.get("https://demoqa.com/browser-windows");
 
 		Actions action = new Actions(driver);
+		action.contextClick(driver.findElement(By.xpath("//h1[text()='Browser Windows']"))).build();
+		Thread.sleep(3000);
 
-		action.contextClick(driver.findElement(By.xpath("//button[text()='New Tab']"))).build().perform();
 
 	}
 

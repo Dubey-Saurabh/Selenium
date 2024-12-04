@@ -30,8 +30,6 @@ public class DynamicRadioButtons {
 
 			String value = localRadio.getAttribute("value");
 
-			System.out.println("Values of radio buttons: " + value);
-
 			if (value.equalsIgnoreCase("Impressive")) {
 				localRadio.click();
 			}

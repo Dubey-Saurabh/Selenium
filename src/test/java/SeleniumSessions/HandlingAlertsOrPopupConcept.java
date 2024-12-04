@@ -23,8 +23,8 @@ public class HandlingAlertsOrPopupConcept {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        driver.findElement(By.name("proceed")).getAttribute("class");
-
+        String ele = driver.findElement(By.name("proceed")).getAttribute("class");
+        System.out.println(ele);
 
         Alert alert = driver.switchTo().alert(); // To switch to alert or pop up window
         System.out.println(alert.getText()); // To get text from alert or pop up.

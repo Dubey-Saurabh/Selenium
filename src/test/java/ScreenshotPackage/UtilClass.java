@@ -11,6 +11,9 @@ import org.openqa.selenium.WebDriverException;
 
 public class UtilClass {
 
+/*	File source = ((Takescreenshot)driver.getScreenshotAs(OutputType.FILE);
+    FileUtils.copyFile(source, new File(Path where we want to save the screenshot))*/
+
 	public static void captureScreenshot(WebDriver driver, String screenshotname) {
 
 		try {

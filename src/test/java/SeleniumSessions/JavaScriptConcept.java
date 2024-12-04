@@ -40,7 +40,6 @@ public class JavaScriptConcept {
         System.out.println(js.executeScript("return document.readyState")); //Returns the current state of the document
         System.out.println(js.executeScript("return window.performance.timing")); //Returns performance timing information of the current page
 
-
         driver.quit();
     }
 }

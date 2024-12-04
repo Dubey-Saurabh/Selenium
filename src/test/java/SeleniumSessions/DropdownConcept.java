@@ -30,14 +30,21 @@ public class DropdownConcept {
 
 		day.selectByVisibleText("16");
 
-		List<WebElement> dayList = day.getOptions();         // to get all the options in a dropdown
+		// to get all the options in a dropdown
+		List<WebElement> dayList = day.getOptions();
 
 		for (WebElement ele : dayList) {          
 			
 			String dayValues = ele.getText();
 
-			System.out.println("Day values will be:" + dayValues);
+			if (dayValues.equals("16")){
+				ele.click();
+				break;
+			}
+
 		}
+
+		driver.quit();
 
 	}
 

@@ -21,7 +21,10 @@ public class KeyboardEvents {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 		driver.get("https://en-gb.facebook.com/");
-		
+
+		//get all browser logs
+//		driver.manage().logs().get("browser").getAll();
+
 		Actions action = new Actions(driver);
 		
 		action.sendKeys(Keys.ENTER).build().perform();
@@ -30,7 +33,5 @@ public class KeyboardEvents {
 		
 		action.sendKeys(Keys.TAB).sendKeys("password").sendKeys(Keys.ENTER).build().perform();
 
-		
 	}
-
 }

@@ -14,7 +14,6 @@ public class HTMLUnitDriverConcept {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\Saurabh_Dubey\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new HtmlUnitDriver();
-		//WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);

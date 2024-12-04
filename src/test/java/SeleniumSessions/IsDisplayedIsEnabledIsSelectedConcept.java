@@ -11,7 +11,6 @@ import org.testng.Assert;
 
 public class IsDisplayedIsEnabledIsSelectedConcept {
 
-	
 		public static void main(String[] args) {
 			WebDriverManager.chromedriver().setup();
 		     WebDriver driver  = new ChromeDriver();  

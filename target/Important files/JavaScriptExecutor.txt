@@ -1,0 +1,16 @@
+String zoomOut = "document.body.style.zoom='50%';";  //Zoom in page
+String text = "arguments[0].setAttribute('value','Selenium')"; // provide input to a field
+js.executeScript("window.scrollBy(0,1600);");  // to scroll vertically down
+js.executeScript("window.scrollBy(0,-400);"); // to scroll vertically up
+js.executeScript("window.scrollTo(0,0)"); ////Scrolls to the extreme top of the page.
+js.executeScript("window.scrollTo(0,document.body.scrollHeight)"); // esteem bottom
+js.executeScript("arguments[0].scrollIntoView();", element); // scroll till element
+js.executeScript("return document.title")); // current webpage title
+js.executeScript("arguments[0].style.backgroundColor = 'yellow';", locator); // highlight element
+js.executeScript("arguments[0].click();", locator);  // click on element
+js.executeScript("return document.readyState")); //Returns the current state of the document
+js.executeScript("return window.performance.timing")); //Returns performance timing information of the current page
+js.executeScript("return document.querySelector(\"amplify-authenticator > amplify-sign-in\") // to locate shadow dom element
+
+
+

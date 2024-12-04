@@ -20,8 +20,7 @@ public class FileUploadUsingRobotClass {
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
 
         driver.get("https://the-internet.herokuapp.com/upload");
 

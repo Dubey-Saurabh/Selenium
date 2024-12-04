@@ -6,9 +6,9 @@ public class InterfaceDemo {
 
 //		Abc obj = new Abc() {
 //
-//			public void show() {
+//		public void show() {
 //
-//				System.out.println("interface method");
+//		System.out.println("interface method");
 
 		Abc obj = () -> System.out.println("interface method");
 
