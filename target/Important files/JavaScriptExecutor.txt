@@ -1,4 +1,4 @@
-String zoomOut = "document.body.style.zoom='50%';";  //Zoom in page
+String zoomOut/In = "document.body.style.zoom='50%';";  //Zoom in page
 String text = "arguments[0].setAttribute('value','Selenium')"; // provide input to a field
 js.executeScript("window.scrollBy(0,1600);");  // to scroll vertically down
 js.executeScript("window.scrollBy(0,-400);"); // to scroll vertically up

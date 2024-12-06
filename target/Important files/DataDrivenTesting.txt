@@ -3,11 +3,10 @@
 -Create object of Xls Reader class in your testing class and give the path of the excel file you have in your local or in project
 
 getCellData(sheetname, colNum, rowNum) OR getCellData(sheetname, colName, rowNum)
-getRowData
+setCellData(sheetname, columnName, rowNum, dataYouWantToAdd)
 getRowCount(sheetname)
 getColumnCount(sheetname)
 addSheet(newSheetname)
 addColomun(sheetname, newColumnName)
 isSheetExist(sheetname)
-setCellData(sheetname, columnName, rowNum, dataYouWantToAdd)
 removeColumn(sheetname, colNo)
