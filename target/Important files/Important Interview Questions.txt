@@ -86,11 +86,22 @@ Collaboration with the Development Team: Open communication and collaboration be
 Continuous Testing: Regular testing and monitoring are necessary to prevent regressions and ensure the quality of the application.
 By following these steps, I was able to successfully identify, report, and fix the bug, contributing to the overall quality of the e-commerce platform.
 
+What is CI?
+Continuous Integration (CI) is a software development practice where developers frequently integrate their code changes into a central repository, such as Git.
+Frequent Integrations: developers merge their changes into the main branch multiple times a day.
+Automated Builds and Tests: Every code change triggers an automated build and test process.  This includes:
+Building the project: Compiling the source code into an executable or deployable artifact.
+Running tests: Executing unit tests, integration tests, and other automated tests to ensure the code changes don't break existing functionality.
+Early Feedback: CI provides rapid feedback to developers on the quality of their code changes. If tests fail, developers are immediately notified, allowing them to quickly identify and fix issues.  
+Reduced Integration Issues: Frequent integration helps to minimize the risk of conflicts and integration problems that can arise when large code changes are merged at the end of a development cycle.
 
-Hi, my name is Saurabh Dubey, I have been working as an automation testing professional for Epam systems for more than 3 years now. Total i do have around 5 plus years of experience in testing only.
-As an agile member, my job is to take care of all testing activities starting from the Feature backlog till the delivery of the features.
-When comes to technologies I speacialize in using Selenium Webdriver for Web UI automation testing, RestAPI, Postman and Jersey client libraries for backend testing.
-Jenkins as a CI/CD tools , Version controlling tools like GIT/ Bitbucket.
-Page object model, Cucumber BDD, TestNG framework etc.
-Maven as a build automation tool, Rally as a track management tool.
-And I'm pretty much comfortable with Manual testing tasks also like all the kinds of black box testing.
+How do you connect to database manually and by automation also?
+Connection  connection = DriverManager.getConnection("url", "username", "password");
+
+The Local Maven Repository:
+the local repository acts as a cache for all the project dependencies, plugins, and artifacts.
+It's a dedicated directory on your local machine where Maven stores these components for subsequent builds
+When you initiate a Maven build, it first checks the local repository for the required dependencies. If they're already present, Maven directly uses them, streamlining the build process.
+However, if a dependency is missing, Maven fetches it from a remote repository (like Maven Central) and stores it in the local repository for future use.
+
+

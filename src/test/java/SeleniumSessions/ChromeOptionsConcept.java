@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,8 +24,6 @@ public class ChromeOptionsConcept {
 //        options.setCapability("browserName","firefox");
         options.setCapability("browserVersion","latest"); // latest browser version
 
-
-
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://www.instagram.com/");
         driver.manage().window().maximize();
@@ -32,9 +31,6 @@ public class ChromeOptionsConcept {
         driver.manage().logs().get("browser");
 
         driver.quit();
-
-
-
 
     }
 }

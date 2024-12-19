@@ -32,10 +32,5 @@ public class DesiredCapabilityConcept {
 
         driver.quit();
 
-
-
-
-
-
     }
 }

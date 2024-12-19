@@ -26,12 +26,12 @@ public class FileUploadUsingRobotClass {
 
         Robot robot = new Robot();
 
-        String path = System.getProperty("user.dir") + "\\target\\scByRobotClass1.png";
+        String path = System.getProperty("user.dir") +"\\target\\scByRobotClass1.png";
         StringSelection stringSelection = new StringSelection(path);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath("file-upload"))).click().build().perform();
+        actions.moveToElement(driver.findElement(By.id("file-upload"))).click().build().perform();
         robot.delay(2000);
 
         robot.keyPress(KeyEvent.VK_CONTROL);
@@ -42,6 +42,8 @@ public class FileUploadUsingRobotClass {
         robot.delay(2000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+
+        driver.quit();
 
 
     }

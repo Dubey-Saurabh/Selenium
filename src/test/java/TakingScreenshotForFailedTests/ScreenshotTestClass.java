@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 @Listeners(CustomListener.class)
 public class ScreenshotTestClass extends BaseClass {
 
-
     @BeforeMethod
     public void setUp() {
         initialization();
@@ -17,7 +16,8 @@ public class ScreenshotTestClass extends BaseClass {
 
     @Test
     public void failedTestCase() {
-        Assert.assertEquals(false, true);
+        String title = driver.getTitle();
+        Assert.assertEquals(title, "Instigram", "Title not matched");
     }
 
     @AfterMethod

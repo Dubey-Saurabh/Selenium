@@ -27,6 +27,7 @@ public class FrameHandling {
         driver.switchTo().defaultContent();
 //        driver.switchTo().parentFrame();
 
+        //nested frames
         driver.switchTo().frame(driver.findElement(By.xpath("//*[contains(@src,'frame_3.html')]")).findElement(By.xpath("//p[contains(text(),'iframe inside frame:')]/following-sibling::iframe")));
         driver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
 

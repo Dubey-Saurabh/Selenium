@@ -21,11 +21,13 @@ public class RightClickConcept {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-		driver.get("https://demoqa.com/browser-windows");
+		driver.get("https://www.instagram.com");
 
 		Actions action = new Actions(driver);
-		action.contextClick(driver.findElement(By.xpath("//h1[text()='Browser Windows']"))).build();
-		Thread.sleep(3000);
+		action.contextClick(driver.findElement(By.xpath("//div[text()='Log in']"))).build().perform();
+		Thread.sleep(5000);
+
+		driver.quit();
 
 
 	}

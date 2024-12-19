@@ -1,36 +1,41 @@
 package SingletonFramework;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 public class TestClass {
 
     //NOTE: In normal class, we use constructor to instantiate a class whereas in Singleton concept we use method like getObject in this class.
 
-    WebDriver driver;
+    public static void main(String[] args) {
 
-    @BeforeMethod
-    public void setUp() {
-        DriverInitialisation instance = DriverInitialisation.getObject();
-        driver = instance.openBrowser();
+        /*initialize runnable interface*/
+        Runnable task = () -> {
+            DriverInitialisation.getObject().getMessage();
+
+        };
+
+
+        Thread thread1 = new Thread(task);
+        Thread thread2 = new Thread(task);
+        Thread thread3 = new Thread(task);
+        Thread thread4 = new Thread(task);
+        Thread thread5 = new Thread(task);
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
+        thread5.start();
+
+
+        /*Waiting for threads to complete*/
+        try {
+            thread1.join();
+            thread2.join();
+            thread3.join();
+            thread4.join();
+            thread5.join();
+        } catch (InterruptedException e) {
+            e.getMessage();
+        }
 
     }
-
-    @Test
-    public void getGoogleTitle() {
-
-        driver.get("https://www.google.com");
-        System.out.println(driver.getTitle());
-
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-
-    }
-
-
 }

@@ -39,12 +39,6 @@ public class WorkingWithTwoDifferentTabs {
         driver.quit();
 
 
-
-
-
-
-
-
     }
 
 }
