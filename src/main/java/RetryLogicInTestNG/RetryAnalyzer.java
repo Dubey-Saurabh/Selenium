@@ -9,7 +9,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
     int retryChance = 3;
 
     @Override
-    public boolean retry(ITestResult iTestResult) {
+    public boolean retry(ITestResult result) {
         if (counter < retryChance) {
             counter++;
             return true;

@@ -31,7 +31,6 @@ public class MultipleTabsHandling {
 
         Set<String> handles = driver.getWindowHandles();
         //contains parent as well as child windows browser ids
-        System.out.println(handles);
         List<String> handleList = new ArrayList<>(handles);
 
         if (switchToRightWindow("Meta", handleList)) {

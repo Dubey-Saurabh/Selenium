@@ -14,5 +14,3 @@ Nodes: on which execution will happen
  🟢Step 3 - Connect Node in Same Network.
   java -jar selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.1.106:4444/grid/register
  🟢Step 4 :  Verify the http://192.168.1.2:4444/grid/console
-
- ((JavaScriptExecutor)driver).executeScript("arguments[0].scrollIntoView(element)"");

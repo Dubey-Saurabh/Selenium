@@ -3,9 +3,11 @@ package SeleniumSessions.WindowTabFrameHandles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class FrameHandling {
 
@@ -37,12 +39,9 @@ public class FrameHandling {
         //Second iframe
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[position()=2]")));
 
-
-
-
-
-
-
+        //Check no of frames
+        List<WebElement> iframeCount = driver.findElements(By.tagName("iframe"));
+        System.out.println(iframeCount.size());
 
 
     }
