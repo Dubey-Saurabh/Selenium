@@ -12,6 +12,7 @@ import java.time.Duration;
 public class KeyboardEvents {
 
 	public static void main(String[] args) {
+
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 
