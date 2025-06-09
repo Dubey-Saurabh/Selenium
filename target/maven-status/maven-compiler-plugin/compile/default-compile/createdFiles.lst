@@ -1,0 +1,5 @@
+RetryLogicInTestNG\RetryAnalyzer.class
+com\qa\test\DataDrivenTest.class
+com\qa\util\XlsReader.class
+RetryLogicInTestNG\RerunFailedTestsUsingTestNG.class
+RetryLogicInTestNG\TestAnalyzer.class
