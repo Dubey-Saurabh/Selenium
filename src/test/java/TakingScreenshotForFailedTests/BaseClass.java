@@ -14,7 +14,7 @@ public class BaseClass {
 
     public static WebDriver driver;
 
-    public static void initialization(){
+    public static void initialization() {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -22,10 +22,10 @@ public class BaseClass {
 
     }
 
-    public  static void takeScreenshotForFailedTests(String testMethodName) throws IOException {
+    public static void takeScreenshotForFailedTests(String testMethodName) throws IOException {
 
-        File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(source, new File("C:\\SeleniumProject\\target\\"+testMethodName+".png"));
+        File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(source, new File("C:\\SeleniumProject\\target\\" + testMethodName + ".png"));
 
     }
 

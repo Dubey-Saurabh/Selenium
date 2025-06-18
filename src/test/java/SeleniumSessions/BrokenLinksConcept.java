@@ -23,9 +23,10 @@ public class BrokenLinksConcept {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         driver.get("https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium");
+
         List<WebElement> list = driver.findElements(By.tagName("a"));
         System.out.println("Total links :" + list.size());
 
@@ -48,9 +49,7 @@ public class BrokenLinksConcept {
                 System.out.println(url + " -" + " is broken link");
             }
         }
-
         driver.quit();
-
     }
 
 }
