@@ -2,11 +2,9 @@ package SeleniumSessions;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -23,9 +21,9 @@ public class BrokenLinksConcept {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        driver.get("https://www.browserstack.com/guide/how-to-find-broken-links-in-selenium");
+        driver.get("https://www.johnsoncontrols.com");
 
         List<WebElement> list = driver.findElements(By.tagName("a"));
         System.out.println("Total links :" + list.size());

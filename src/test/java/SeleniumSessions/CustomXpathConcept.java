@@ -27,9 +27,9 @@ public class CustomXpathConcept {
 		// a) -- //tagname[contains(@attribute,'values')]
 		// 2) -- //tagname[contains(text(),'values')]
 
-		driver.findElement(By.xpath("//input[starts-with(@id, 'test_')")).click(); // id = test_1254, id = test_3659874
+		driver.findElement(By.xpath("//input[starts-with(@id, 'test_')]")).click(); // id = test_1254, id = test_3659874
 																					
-		driver.findElement(By.xpath("//input[ends-with(@id, '_test')")).click(); // id = 23654_test, id = 223665458_test
+		driver.findElement(By.xpath("//input[ends-with(@id, '_test')]")).click(); // id = 23654_test, id = 223665458_test
 
 	}
 

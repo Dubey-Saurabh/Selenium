@@ -28,13 +28,8 @@ public class Test {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-              new WebDriverWait(driver, Duration.ofSeconds(20)).ignoring(StaleElementReferenceException.class).
+        new WebDriverWait(driver, Duration.ofSeconds(20)).ignoring(StaleElementReferenceException.class).
                 until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("xyz"))));
-
-
-
-
-
 
 
     }

@@ -33,7 +33,7 @@ public class ColumnSortingInDescendingOrderValidation {
 
         for (int i = 0; i < columnName.size(); i++) {
             beforeSort[i] = columnName.get(i).getText().trim();
-            System.out.print(beforeSort[i]+ " ");
+            System.out.print(beforeSort[i]+ " ");   
         }
         System.out.println("\n Sorted in descending order ___");
         for (int i = 0; i < columnName.size(); i++) {

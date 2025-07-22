@@ -31,7 +31,7 @@ public class CopyPasteByActionsClass {
         username.click();
 
         /*select all and copy*/
-        action.keyDown(Keys.CONTROL).sendKeys("a","c");
+        action.keyDown(Keys.CONTROL).sendKeys("a", "c");
 
         WebElement password = driver.findElement(By.cssSelector("input#pass"));
         password.click();
@@ -41,10 +41,6 @@ public class CopyPasteByActionsClass {
 
         /*release control key and build and perform*/
         action.keyUp(Keys.CONTROL).build().perform();
-
-
-
-
 
 
     }
