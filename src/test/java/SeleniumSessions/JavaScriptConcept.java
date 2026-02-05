@@ -19,6 +19,7 @@ public class JavaScriptConcept {
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
 //        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20)); Configures maximum time for script execution.
 
         driver.get("https://www.amazon.in/");
