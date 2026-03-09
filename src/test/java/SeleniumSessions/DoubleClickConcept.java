@@ -29,6 +29,7 @@ public class DoubleClickConcept {
 
 		action.doubleClick(driver.findElement(By.xpath("//span[text()='Double click the block']//parent::body/div"))).build().perform();
 
+		driver.quit();
 
 	}
 

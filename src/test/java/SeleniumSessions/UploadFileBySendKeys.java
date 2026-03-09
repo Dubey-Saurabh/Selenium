@@ -19,7 +19,7 @@ public class UploadFileBySendKeys {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         WebElement uploadElement = driver.findElement(By.id("uploadfile_0"));
-        uploadElement.sendKeys("C:\\Users\\Saurabh_Dubey\\Downloads\\csdcs.html");
+        uploadElement.sendKeys("C:\\Users\\jdubey1\\Downloads\\EMIDetail.pdf");
         driver.findElement(By.id("terms")).click();
         driver.findElement(By.name("send")).click();
 

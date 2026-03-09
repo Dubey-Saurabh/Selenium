@@ -15,7 +15,5 @@ public class ChromeV111IssueFixUsingSelenium {
         System.out.println(driver.getTitle());
         Thread.sleep(4000);
         driver.quit();
-
-
     }
 }

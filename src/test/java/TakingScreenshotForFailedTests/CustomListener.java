@@ -16,5 +16,4 @@ public class CustomListener extends BaseClass implements ITestListener {
             e.printStackTrace();
         }
     }
-
 }
