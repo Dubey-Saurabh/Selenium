@@ -20,11 +20,8 @@ public class CalendarHandlingViaJS {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 
         WebElement date = driver.findElement(By.xpath("//div[@data-testid='departure-date-dropdown-label-test-id']/div/div[@class='css-76zvg2 css-bfa6kz r-homxoj r-ubezar']"));
-        String dateValue = "Thu, 12 Dec 2024";
+        String dateValue = "Fri, 12 Dec 2025";
         selectDate(driver, date, dateValue);
-
-        driver.quit();
-
 
     }
 

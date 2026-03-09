@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,9 +14,9 @@ import java.time.Duration;
 
 public class CopyPasteByActionsClass {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.facebook.com/");
@@ -41,6 +42,10 @@ public class CopyPasteByActionsClass {
 
         /*release control key and build and perform*/
         action.keyUp(Keys.CONTROL).build().perform();
+
+        Thread.sleep(5000);
+
+        driver.quit();
 
 
 

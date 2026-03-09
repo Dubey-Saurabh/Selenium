@@ -22,14 +22,14 @@ public class CustomXpathConcept {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));;
 
-		driver.findElement(By.xpath("//input [contains (@id, 'test')")).sendKeys("xyx");
+		driver.findElement(By.xpath("//input [contains (@id, 'test')]")).sendKeys("xyx");
 
 		// a) -- //tagname[contains(@attribute,'values')]
 		// 2) -- //tagname[contains(text(),'values')]
 
-		driver.findElement(By.xpath("//input[starts-with(@id, 'test_')")).click(); // id = test_1254, id = test_3659874
+		driver.findElement(By.xpath("//input[starts-with(@id, 'test_')]")).click(); // id = test_1254, id = test_3659874
 																					
-		driver.findElement(By.xpath("//input[ends-with(@id, '_test')")).click(); // id = 23654_test, id = 223665458_test
+		driver.findElement(By.xpath("//input[ends-with(@id, '_test')]")).click(); // id = 23654_test, id = 223665458_test
 
 	}
 
