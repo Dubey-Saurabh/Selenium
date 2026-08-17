@@ -25,6 +25,8 @@ public class MultipleWindowsAndAutoSuggestiveDropdown {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         driver.switchTo().newWindow(WindowType.WINDOW); //4
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+        driver.switchTo().newWindow(WindowType.TAB); //4
+        driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         System.out.println(driver.manage().window().getSize());
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
@@ -32,8 +34,8 @@ public class MultipleWindowsAndAutoSuggestiveDropdown {
         //Switching window on the basis of indexes
         driver.switchTo().window((String) driver.getWindowHandles().toArray()[1]);
 
-        //Parent Window
-       // driver.switchTo().window(driver.getWindowHandles().iterator().next());
+//        Parent Window
+        driver.switchTo().window(driver.getWindowHandles().iterator().next());
 
         //last window
         driver.switchTo().window(driver.getWindowHandles().stream().reduce((first, second) -> second).orElse(null));

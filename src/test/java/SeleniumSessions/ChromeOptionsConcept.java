@@ -19,7 +19,7 @@ public class ChromeOptionsConcept {
         options.addArguments("disable-extensions"); // Disables all extensions in the Chrome browser.
         options.addArguments("no-sandbox"); // No sandbox for testing use
         options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, false); //Accepts SSL certificates in browser options.
-//        options.setCapability("browserName","firefox");
+        options.setCapability("browserName","chrome");
         options.setCapability("browserVersion", "latest"); // latest browser version
 
         WebDriver driver = new ChromeDriver(options);

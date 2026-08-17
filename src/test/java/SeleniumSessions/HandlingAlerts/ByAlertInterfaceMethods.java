@@ -1,16 +1,14 @@
-package SeleniumSessions;
+package SeleniumSessions.HandlingAlerts;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class HandlingAlertsOrPopupConcept {
+public class ByAlertInterfaceMethods {
 
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
@@ -32,7 +30,7 @@ public class HandlingAlertsOrPopupConcept {
         Thread.sleep(5000); // to pause the script for 5 seconds.
         alert.accept(); // to accept alerts
 //        alert.dismiss(); // To close popup
-
+//        alert.sendKeys();
         driver.quit();
 
     }

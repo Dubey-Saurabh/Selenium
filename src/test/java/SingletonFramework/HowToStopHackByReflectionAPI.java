@@ -1,5 +1,7 @@
 package SingletonFramework;
 
+import org.openqa.selenium.TakesScreenshot;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -16,6 +18,8 @@ public class HowToStopHackByReflectionAPI {
 
         System.out.println(instance1.hashCode());
         System.out.println(instance2.hashCode());
+
+
 
 
     }

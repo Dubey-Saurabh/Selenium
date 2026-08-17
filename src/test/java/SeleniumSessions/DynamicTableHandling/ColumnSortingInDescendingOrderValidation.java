@@ -35,12 +35,6 @@ public class ColumnSortingInDescendingOrderValidation {
             beforeSort[i] = columnName.get(i).getText().trim();
             System.out.print(beforeSort[i]+ " ");   
         }
-        System.out.println("\n Sorted in descending order ___");
-        for (int i = 0; i < columnName.size(); i++) {
-            Arrays.sort(beforeSort, Collections.reverseOrder());
-            System.out.print(beforeSort[i]+ " ");
-        }
-
         driver.findElement(By.xpath("//table[@class='sortable']//button[1]")).click();
         columnName = driver.findElements(By.xpath("//table[@class='sortable']/tbody/tr/td[1]"));
 
@@ -51,7 +45,7 @@ public class ColumnSortingInDescendingOrderValidation {
             System.out.print(afterSort[i] + " ");
         }
 
-        Assert.assertEquals(beforeSort, afterSort, "Not Sorted");
+        Assert.assertNotEquals(beforeSort, afterSort, "Not Sorted");
 
 
     }

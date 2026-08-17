@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.security.Key;
 import java.time.Duration;
@@ -41,6 +43,8 @@ public class CopyPasteByActionsClass {
 
         /*release control key and build and perform*/
         action.keyUp(Keys.CONTROL).build().perform();
+
+        new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(username));
 
 
     }

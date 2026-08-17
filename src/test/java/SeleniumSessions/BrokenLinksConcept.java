@@ -2,8 +2,10 @@ package SeleniumSessions;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -23,31 +25,41 @@ public class BrokenLinksConcept {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        driver.get("https://www.johnsoncontrols.com");
+        driver.get("https://www.facebook.com");
 
         List<WebElement> list = driver.findElements(By.tagName("a"));
-        System.out.println("Total links :" + list.size());
 
-        for (int i = 0; i <= list.size(); i++) {
-            WebElement element = list.get(i);
+        List<String> urlList = new ArrayList<>();
 
-            String url = element.getAttribute("href"); // Will give url
-
-            URL link = new URL(url); // Create an object of URL class object and pass above url value
-
-            HttpURLConnection httpConn = (HttpURLConnection) link.openConnection();  // Create HttpURLConnection class object and apply open connection method.
-
-            Thread.sleep(3000);
-
-            httpConn.connect();  // Connect the connection
-
-            int resCode = httpConn.getResponseCode(); // get response code
-
-            if (resCode >= 400) {
-                System.out.println(url + " -" + " is broken link");
-            }
+        for (WebElement element : list) {
+            urlList.add(element.getAttribute("href"));
         }
-        driver.quit();
+
+        urlList.forEach(e -> {
+            try {
+                checkBrokenLinks(e);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+
+    }
+
+    public static void checkBrokenLinks(String link) throws IOException {
+        try {
+            URL url = new URL(link);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setConnectTimeout(20);
+            httpURLConnection.connect();
+            if (httpURLConnection.getResponseCode() > 400) {
+                System.out.println(httpURLConnection.getResponseMessage() + " is a broken link");
+            } else {
+                System.out.println(httpURLConnection.getResponseMessage() + " is NOT a broken link");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

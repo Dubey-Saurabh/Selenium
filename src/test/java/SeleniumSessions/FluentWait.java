@@ -2,15 +2,14 @@ package SeleniumSessions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.time.Duration;
-import java.util.List;
 
 public class FluentWait {
 
@@ -25,29 +24,16 @@ public class FluentWait {
 
         driver.get("https://www.johnsoncontrols.com");
 
-        List<WebElement> list = driver.findElements(By.tagName("a"));
-        System.out.println("Total links :" + list.size());
+        Wait<WebDriver> wait = new org.openqa.selenium.support.ui.FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(1))
+                .ignoring(StaleElementReferenceException.class);
 
-        for (int i = 0; i <= list.size(); i++) {
-            WebElement element = list.get(i);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("landscape")));
 
-            String url = element.getAttribute("href"); // Will give url
 
-            URL link = new URL(url); // Create an object of URL class object and pass above url value
-
-            HttpURLConnection httpConn = (HttpURLConnection) link.openConnection();  // Create HttpURLConnection class object and apply open connection method.
-
-            Thread.sleep(3000);
-
-            httpConn.connect();  // Connect the connection
-
-            int resCode = httpConn.getResponseCode(); // get response code
-
-            if (resCode >= 400) {
-                System.out.println(url + " -" + " is broken link");
-            }
-        }
-        driver.quit();
     }
 
 }
+
+
