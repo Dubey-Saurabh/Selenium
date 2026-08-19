@@ -1,6 +1,6 @@
 package FunctionalInterface;
 
-public class InterfaceDemo {
+public class FunctionalInterfaceClass {
 
 	public static void main(String[] args) {
 
@@ -10,7 +10,7 @@ public class InterfaceDemo {
 //
 //		System.out.println("interface method");
 
-		Abc obj = () -> System.out.println("interface method");
+		FunctionalInterface obj = () -> System.out.println("interface method");
 
 		obj.show();
 	}
