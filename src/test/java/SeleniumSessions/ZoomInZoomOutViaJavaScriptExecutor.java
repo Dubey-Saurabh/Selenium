@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +10,7 @@ public class ZoomInZoomOutViaJavaScriptExecutor {
     public static void main(String[] args) throws InterruptedException {
 
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
 
@@ -17,12 +18,13 @@ public class ZoomInZoomOutViaJavaScriptExecutor {
 
         driver.manage().window().maximize();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
         String zoomOut = "document.body.style.zoom='50%';";
-        js.executeScript(zoomOut);
+        ((JavascriptExecutor) driver).executeScript(zoomOut);
+
+        Thread.sleep(4000);
 
         String zoomIn = "document.body.style.zoom='400%';";
-        js.executeScript(zoomIn);
+        ((JavascriptExecutor) driver).executeScript(zoomIn);
 
         Thread.sleep(4000);
         driver.quit();

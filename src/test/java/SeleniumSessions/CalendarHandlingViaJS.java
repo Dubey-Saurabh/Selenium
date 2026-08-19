@@ -11,25 +11,24 @@ import java.time.Duration;
 
 public class CalendarHandlingViaJS {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.spicejet.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        WebElement date = driver.findElement(By.xpath("//div[text()='Departure Date']/following-sibling::div/div[1]"));
-        String dateValue = "Thu, 12 Dec 2024";
+
+        WebElement date = driver.findElement(By.xpath("//div[@data-testid='departure-date-dropdown-label-test-id']/div/div[@class='css-76zvg2 css-bfa6kz r-homxoj r-ubezar']"));
+        String dateValue = "Fri, 12 Dec 2025";
         selectDate(driver, date, dateValue);
-        Thread.sleep(5000);
-        driver.quit();
 
     }
 
     public static void selectDate(WebDriver driver, WebElement element, String dateValue) {
+
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('value','" + dateValue + "');", element);
-
     }
 
 }

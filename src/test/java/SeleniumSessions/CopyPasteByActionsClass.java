@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -7,17 +8,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.security.Key;
 import java.time.Duration;
 
 public class CopyPasteByActionsClass {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.facebook.com/");
@@ -28,14 +27,14 @@ public class CopyPasteByActionsClass {
         String name = "Saurabh";
 
         Actions action = new Actions(driver);
-        WebElement username = driver.findElement(By.cssSelector("input#email"));
+        WebElement username = driver.findElement(By.cssSelector("input[name=email]"));
         username.sendKeys(name);
         username.click();
 
         /*select all and copy*/
         action.keyDown(Keys.CONTROL).sendKeys("a", "c");
 
-        WebElement password = driver.findElement(By.cssSelector("input#pass"));
+        WebElement password = driver.findElement(By.cssSelector("input[name=pass]"));
         password.click();
 
         /*paste*/
@@ -44,7 +43,9 @@ public class CopyPasteByActionsClass {
         /*release control key and build and perform*/
         action.keyUp(Keys.CONTROL).build().perform();
 
-        new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(username));
+        Thread.sleep(5000);
+
+        driver.quit();
 
 
     }

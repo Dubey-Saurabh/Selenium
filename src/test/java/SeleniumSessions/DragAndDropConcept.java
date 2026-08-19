@@ -11,22 +11,26 @@ import org.openqa.selenium.interactions.Actions;
 
 public class DragAndDropConcept {
 
-	public static void main(String[] args) {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+    public static void main(String[] args) throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
 
-		driver.get("https://jqueryui.com/droppable/");
+        driver.get("https://jqueryui.com/droppable/");
 
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));;
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        ;
 
-		driver.switchTo().frame(0);
+        driver.switchTo().frame(0);
 
-		Actions action = new Actions(driver);
+        Actions action = new Actions(driver);
 
-		action.clickAndHold(driver.findElement(By.id("draggable")))
-				.moveToElement(driver.findElement(By.id("droppable"))).release().build().perform();
+        action.clickAndHold(driver.findElement(By.id("draggable")))
+                .moveToElement(driver.findElement(By.id("droppable"))).release().build().perform();
 
-	}
+        Thread.sleep(5000);
+        driver.quit();
+
+    }
 
 }

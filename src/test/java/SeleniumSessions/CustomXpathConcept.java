@@ -22,7 +22,7 @@ public class CustomXpathConcept {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));;
 
-		driver.findElement(By.xpath("//input [contains (@id, 'test')")).sendKeys("xyx");
+		driver.findElement(By.xpath("//input [contains (@id, 'test')]")).sendKeys("xyx");
 
 		// a) -- //tagname[contains(@attribute,'values')]
 		// 2) -- //tagname[contains(text(),'values')]

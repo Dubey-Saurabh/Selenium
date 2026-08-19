@@ -1,5 +1,6 @@
 package SeleniumSessions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,7 @@ public class RunTestOnAlreadyOpenBrowserWindow {
       /*  Go to chrome.exe location and make a folder chrome data and run chrome.exe --remote-debugging-port=9222 --user-data.dir=C:\AppData\Code\chromedata command
         set the same port address in chrome option script*/
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("debuggerAddress", "localhost:9222");
         WebDriver driver = new ChromeDriver(options);

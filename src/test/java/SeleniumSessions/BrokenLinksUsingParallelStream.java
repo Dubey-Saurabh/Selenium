@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BrokenLinksConcept {
+public class BrokenLinksUsingParallelStream {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         WebDriverManager.chromedriver().setup();
@@ -25,38 +25,30 @@ public class BrokenLinksConcept {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        driver.get("https://www.facebook.com");
-
+        driver.get("https://www.instagram.com");
         List<WebElement> list = driver.findElements(By.tagName("a"));
 
         List<String> urlList = new ArrayList<>();
-
         for (WebElement element : list) {
             urlList.add(element.getAttribute("href"));
         }
 
-        urlList.forEach(e -> {
-            try {
-                checkBrokenLinks(e);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-        });
-
+        urlList.parallelStream().forEach(e -> checkBrokenLinks(e));
+        driver.quit();
 
     }
 
-    public static void checkBrokenLinks(String link) throws IOException {
+    public static void checkBrokenLinks(String Link) {
         try {
-            URL url = new URL(link);
+            URL url = new URL(Link);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-            httpURLConnection.setConnectTimeout(20);
+            httpURLConnection.setConnectTimeout(20000);
             httpURLConnection.connect();
+
             if (httpURLConnection.getResponseCode() > 400) {
-                System.out.println(httpURLConnection.getResponseMessage() + " is a broken link");
-            } else {
-                System.out.println(httpURLConnection.getResponseMessage() + " is NOT a broken link");
-            }
+                System.out.println(Link + "->" + httpURLConnection.getResponseMessage() + "is a broken link");
+            } else
+                System.out.println(Link + "->" + httpURLConnection.getResponseMessage());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
