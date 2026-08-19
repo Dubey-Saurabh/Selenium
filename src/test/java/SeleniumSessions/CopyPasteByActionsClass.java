@@ -27,14 +27,14 @@ public class CopyPasteByActionsClass {
         String name = "Saurabh";
 
         Actions action = new Actions(driver);
-        WebElement username = driver.findElement(By.cssSelector("input#email"));
+        WebElement username = driver.findElement(By.cssSelector("input[name=email]"));
         username.sendKeys(name);
         username.click();
 
         /*select all and copy*/
         action.keyDown(Keys.CONTROL).sendKeys("a", "c");
 
-        WebElement password = driver.findElement(By.cssSelector("input#pass"));
+        WebElement password = driver.findElement(By.cssSelector("input[name=pass]"));
         password.click();
 
         /*paste*/

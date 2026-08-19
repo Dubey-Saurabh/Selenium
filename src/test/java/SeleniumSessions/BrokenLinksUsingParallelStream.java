@@ -22,12 +22,11 @@ public class BrokenLinksUsingParallelStream {
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         driver.get("https://www.instagram.com");
         List<WebElement> list = driver.findElements(By.tagName("a"));
-        System.out.println("Total links :" + list.size());
 
         List<String> urlList = new ArrayList<>();
         for (WebElement element : list) {
@@ -35,6 +34,7 @@ public class BrokenLinksUsingParallelStream {
         }
 
         urlList.parallelStream().forEach(e -> checkBrokenLinks(e));
+        driver.quit();
 
     }
 
