@@ -6,6 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -22,6 +24,8 @@ public class CalendarHandlingViaJS {
         WebElement date = driver.findElement(By.xpath("//div[@data-testid='departure-date-dropdown-label-test-id']/div/div[@class='css-76zvg2 css-bfa6kz r-homxoj r-ubezar']"));
         String dateValue = "Fri, 12 Dec 2025";
         selectDate(driver, date, dateValue);
+
+        new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(date));
 
     }
 

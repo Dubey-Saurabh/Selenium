@@ -34,7 +34,7 @@ public class MultipleWindowsAndAutoSuggestiveDropdown {
         //Switching window on the basis of indexes
         driver.switchTo().window((String) driver.getWindowHandles().toArray()[1]);
 
-//        Parent Window
+//      Parent Window
         driver.switchTo().window(driver.getWindowHandles().iterator().next());
 
         //last window

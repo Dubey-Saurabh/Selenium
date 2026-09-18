@@ -22,18 +22,15 @@ public class FrameHandlingExampleOne {
 
         driver.get("https://docs.oracle.com/javase/8/docs/api/index.html");
 
-        driver.switchTo().frame("packageFrame");
-        driver.findElement(By.xpath("//a[text()='AbstractAction']")).click();
+        driver.switchTo().frame("packageFrame").findElement(By.xpath("//a[text()='AbstractAction']")).click();
 
         driver.switchTo().defaultContent();
 
-        driver.switchTo().frame("classFrame");
-        driver.findElement(By.xpath("//li[@class='blockList']/dl/dd/a[text()='ActionListener']")).click();
+        driver.switchTo().frame("classFrame").findElement(By.xpath("//li[@class='blockList']/dl/dd/a[text()='ActionListener']")).click();
 
         driver.switchTo().defaultContent();
 
-        driver.switchTo().frame(driver.findElement(By.xpath("//frame[position()=1]")));
-        driver.findElement(By.linkText("java.awt.color")).click();
+        driver.switchTo().frame(driver.findElement(By.xpath("//frame[position()=1]"))).findElement(By.linkText("java.awt.color")).click();
 
 
     }

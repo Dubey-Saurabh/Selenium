@@ -4,11 +4,12 @@
 
     <listeners>
         <listener class-name="RetryLogicInTestNG.TestAnalyzer"></listener>
-
     </listeners>
+
     <test name="Rerun Failed tests">
         <classes>
-            <class name="RetryLogicInTestNG.RerunFailedTestsUsingTestNG"/>
+            <class name="RetryLogicInTestNG.MethodTwo"/>
         </classes>
     </test> <!-- Test -->
+
 </suite> <!-- Suite -->

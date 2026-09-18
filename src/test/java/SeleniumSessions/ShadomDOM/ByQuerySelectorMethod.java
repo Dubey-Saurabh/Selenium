@@ -27,8 +27,5 @@ public class ByQuerySelectorMethod {
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", resetPwdLink);
 
-
     }
-
-
 }

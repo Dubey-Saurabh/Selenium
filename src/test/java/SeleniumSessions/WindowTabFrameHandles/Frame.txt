@@ -1,6 +1,4 @@
-        1. driver.switchTo().frame(frame): Switches focus to a frame using its name or ID.
-		2. driver.switchTo().frame(int index): Switches focus to a frame using its index number.
-		3. driver.switchTo().frame(webElement): Switches focus to a frame using a WebElement reference.
+        1. driver.switchTo().frame(frameName or frameId or frameIndex or webElement): Switches focus to a frame using its name or ID.
 		4. driver.switchTo().defaultContent(): Switches back to the main document from a frame.
 		5. driver.switchTo().parentFrame(): Switches to the parent frame of the currently focused frame.
 		6. driver.switchTo().frame("frameName"): Switches focus to a frame using its name.

@@ -3,9 +3,9 @@ package RetryLogicInTestNG;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RerunFailedTestsUsingTestNG {
+public class MethodOne {
 
-    @Test (retryAnalyzer = RetryAnalyzer.class)
+    @Test (retryAnalyzer = RetryLogicInTestNG.RetryAnalyzer.class)
     public void testOne() {
         Assert.assertEquals(true, false);
     }

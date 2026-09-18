@@ -13,15 +13,11 @@ public class BaseTest {
     // Set up the ChromeDriver
     @BeforeMethod
     public void setup() {
-        // Set the path to your chromedriver executable
         WebDriverManager.chromedriver().setup();
-
-        // Initialize the ChromeDriver
         driver = new ChromeDriver();
 
     }
 
-    // Close the browser after each test
     @AfterMethod
     public void teardown() {
         if (driver != null) {
